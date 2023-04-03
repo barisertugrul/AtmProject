@@ -366,6 +366,20 @@ public class Main {
         return null; // if no matching account is found, return null
     }// end method getAccount
 
+    private static void updateBankAccountsData(int accountNumber, List accountData)
+    {
+        // loop through accounts searching for matching account number
+        for (Integer key : accounts.keySet())
+        {
+            Object account = accounts.get(key);
+            //return the current account if a match is found
+            if ((int) ((List) account).get(0) == accountNumber)
+            {
+                accounts.replace(key, accountData);
+            }
+        }// end for loop
+    }// end method updateBankAccountsData
+
     // determine whether the user specified account number and PIN matches
     // those of an account in the database
     private static boolean authenticateUser(int userAccountNumber, int userPIN)
@@ -406,6 +420,7 @@ public class Main {
         double totalBalance = (double) userAccount.get(3);
         totalBalance += amount;
         userAccount.set(3, totalBalance);
+        updateBankAccountsData(userAccountNumber, userAccount);
     }// end method credit
 
     //debit an amount to Account with specified account number
@@ -418,5 +433,6 @@ public class Main {
         availableBalance -= amount;
         userAccount.set(3, totalBalance);
         userAccount.set(2, availableBalance);
+        updateBankAccountsData(userAccountNumber, userAccount);
     }
 }
