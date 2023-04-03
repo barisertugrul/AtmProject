@@ -12,7 +12,7 @@ public class Main {
     private static int count = 500; // Total banknot count in ATM
     private static Scanner input;
 
-    private static Map<Integer,Object> accounts = new HashMap<Integer,Object>();
+    private static Map<Integer,Object> accounts = new HashMap<>();
 
     public static void main(String[] args) {
         run();
