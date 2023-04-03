@@ -82,21 +82,7 @@ public class Main {
                 case BALANCE_INQUIRY:
                 case WITHDRAWAL:
                 case DEPOSIT:
-
-                    // initializes as new object of chosen type
-                    //createTransaction(mainMenuSelection);
-                    switch (mainMenuSelection)
-                    {
-                        case BALANCE_INQUIRY: // create new BalanceInquiry transaction
-                            balanceInquiryExecute(currentAccountNumber);
-                            break;
-                        case WITHDRAWAL: // create new Withdrawal transaction
-                            withDrawalExecute(currentAccountNumber);
-                            break;
-                        case DEPOSIT: // create new Deposit transaction
-                            depositExecute(currentAccountNumber);
-                            break;
-                    }
+                    createTransaction(mainMenuSelection);
                     break;
 
                 case EXIT: // user chose to terminate session
