@@ -8,6 +8,7 @@ public class Main {
     private static final int DEPOSIT = 3;
     private static final int EXIT = 4;
     private final static int CANCELED = 6;
+    private final static int DEPOSIT_CANCELED = 0;
     private static int count = 500; // Total banknot count in ATM
     private static Scanner input;
 
@@ -220,7 +221,6 @@ public class Main {
                     userChoice = amounts[input]; // save user's choice
                     break;
                 case CANCELED: // the user chose to cancel
-
                     userChoice = CANCELED;
                     break;
                 default: // the user did not enter a value from 1-6
@@ -259,7 +259,7 @@ public class Main {
         // get deposit amount from user
         double amount = promptForDepositAmount();
 
-        if(amount != CANCELED)
+        if(amount != DEPOSIT_CANCELED)
         {
             // request deposit envelope containing the specified amount
             displayMessage("\nPlease insert a deposit envelope containing ");
@@ -301,9 +301,9 @@ public class Main {
         int input = getInput(); // receive input of deposit amount
 
         // check whether the user canceled or entered a valid amount
-        if(input == CANCELED)
+        if(input == DEPOSIT_CANCELED)
         {
-            return CANCELED;
+            return DEPOSIT_CANCELED;
         }// end if
         else
         {
