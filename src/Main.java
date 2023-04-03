@@ -8,7 +8,7 @@ public class Main {
     private static final int DEPOSIT = 3;
     private static final int EXIT = 4;
     private final static int CANCELED = 6;
-    private static int count = 500;
+    private static int count = 500; // Total banknot count in ATM
     private static Scanner input;
 
     private static Map<Integer,Object> accounts = new HashMap<Integer,Object>();
@@ -413,7 +413,7 @@ public class Main {
     {
         List userAccount = getAccount(userAccountNumber);
         double totalBalance = (double) userAccount.get(3);
-        double availableBalance = (double) userAccount.get(3);
+        double availableBalance = (double) userAccount.get(2);
         totalBalance -= amount;
         availableBalance -= amount;
         userAccount.set(3, totalBalance);
