@@ -353,7 +353,7 @@ public class Main {
     private static List getAccount(int accountNumber)
     {
         // loop through accounts searching for matching account number
-        for (Integer key : accounts.keySet())
+        for (int key : accounts.keySet())
         {
             Object account = accounts.get(key);
             //return the current account if a match is found
@@ -369,7 +369,7 @@ public class Main {
     private static void updateBankAccountsData(int accountNumber, List accountData)
     {
         // loop through accounts searching for matching account number
-        for (Integer key : accounts.keySet())
+        for (int key : accounts.keySet())
         {
             Object account = accounts.get(key);
             //return the current account if a match is found
@@ -390,7 +390,7 @@ public class Main {
         // if account exists, return result of Account method validatePIN
         if(userAccount != null)
         {
-            Integer pin = (int) userAccount.get(1);
+            int pin = (int) userAccount.get(1);
             return pin == userPIN ? true : false;
         }
         else
